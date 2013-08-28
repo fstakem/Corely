@@ -23,3 +23,4 @@ log_separator = (header_line, footer_line)
 debug_lexer = False
 debug_parser = False
 debug_diff = False
+debug_state_machine = False

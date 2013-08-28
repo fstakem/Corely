@@ -11,6 +11,7 @@
 # None
 
 # User defined
+from Globals import *
 from Utilities import *
 from Jsonable import Jsonable
 
@@ -28,15 +29,17 @@ class State(Jsonable):
         pass
     
     def enterState(self):
-        State.logger.debug('Entering state: %s' % (self.name))
+        if globals.debug_state_machine:
+            State.logger.debug('Entering state: %s' % (self.name))
     
     def exitState(self):
-        State.logger.debug('Exiting state: %s' % (self.name))
+        if globals.debug_state_machine:
+            State.logger.debug('Exiting state: %s' % (self.name))
         
-    def isFinalState(self):
-        if len(self.transition_table) == 0:
-            return True
-        
-        return False
+    #def isFinalState(self):
+    #    if len(self.transition_table) == 0:
+    #        return True
+    #    
+    #    return False
  
     
